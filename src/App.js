@@ -1,11 +1,18 @@
 import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Mainpage from "./components/Mainpage";
+import Select from "./components/Select";
+import Success from "./components/Success";
 
 const App = () => {
   return (
-    <>
-      <h1>Teknolojik Yemekler</h1>
-      <p>Burdaki kodu silip kendi headerınızı ekleyebilirsiniz</p>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Mainpage />} />
+        <Route path="/Select" element={<Select />} />
+        <Route path="/Success" element={<Success />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 export default App;

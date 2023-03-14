@@ -36,10 +36,10 @@ Sarı #FDC913, Açık Gri: #5F5F5F, Koyu Gri #292929, Kırmızı #CE2829, Bej: #
 
 ### Görev 1: Proje Kurulumu
 
-- [ ] Forklayarak bir kopya oluşturun
-- [ ] Forku klonlayın
-- [ ] Main branch üzerinde çalışın
-- [ ] Comitinizi pushlayın: `git push origin main`
+- [x] Forklayarak bir kopya oluşturun
+- [x] Forku klonlayın
+- [x] Main branch üzerinde çalışın
+- [x] Comitinizi pushlayın: `git push origin main`
 
 ### Görev 2: Proje Gereklilikleri
 
