@@ -2,6 +2,16 @@ import React from "react";
 import logo from "../logo.svg";
 import { Link } from "react-router-dom";
 import img from "../Assets/Assets/esnek/esnek-form-banner.png";
+import * as Yup from "yup";
+import axios from "axios";
+// import {
+//   Form,
+//   FormGroup,
+//   Input,
+//   Label,
+//   Button,
+//   FormFeedback,
+// } from "reactstrap";
 
 export default function Order() {
   const checkData = [
@@ -21,25 +31,53 @@ export default function Order() {
     { id: "14", value: "Sarımsak", status: false },
   ];
   const Form = () => {
+    
+    
+  };
     const formSubmit = (e) => {
       e.preventDefault();
+      // axios.post("url", user).then(res => Navigate("/Success"));
     };
+  const checkChange = (e) => {
+    console.log(e.target);
+
+  }
+
+  const textChange = (e) => {
+    console.log("input > ", e.target.value);
+  };
+  
+  const nameChange = (e) => {
+    console.log("name = ", e.target.value);
   };
 
-  const nameChange = (e) => {
-    console.log()
-  } 
+  const emailChange = (e) => {
+    console.log("email = ", e.target.value);
+  };
+  
+  const adressChange = (e) => {
+    console.log("adress = ", e.target.value);
+  };
+
+  const phoneChange = (e) => {
+    console.log("phone = ", e.target.value);
+  };
   
   const mailChangeHandler = () => {
 console.log()
+
+// useEffect(()=> {
+//   console.log("user = ", user);
+// }, [user]);
+ 
   };
   return (
     <div>
       <div className="bg-red text-center grid place-items-center place-content-center">
         <img src={logo} className="pt-10 pb-8 "></img> 
       </div>
-            <img src={img} className="pt-0 pb-5"></img>
-            <div className="pb-6 mr-center text-[20px]">
+            <img src={img} className="position"></img>
+            <div className="links">
           <Link to="/" className="text-black hover:text-red no-underline">
             Anasayfa
           </Link>
@@ -79,7 +117,7 @@ console.log()
 
         </h2>
 
-        <form>
+        <form onSubmit={formSubmit}>
           <div className="flex justify-between">
             <div>
               <h3 className="font-bold text-[18px] mt-10 mb-4">
@@ -130,7 +168,7 @@ console.log()
                   key={item.id}
                   className="mt-4 font-bold text-zinc-500 hover:text-zinc-800"
                 >
-                  <input id={item.id} type="checkbox" value={item.value} />
+                  <input id={item.id} type="checkbox" onChange={checkChange} value={item.value} />
                   <label htmlFor={item.id} className="ml-4">
                     {item.value}
                   </label>
@@ -138,25 +176,55 @@ console.log()
               ))}
             </div>
           </div>
-          <div>
-            <form>
-              <label htmlFor="user-mail">Email</label>
-              <input id="user-mail" type="text" onChange={mailChangeHandler} />
-              <br/>
-              <label htmlFor="user-pass">Password</label>
-              <input type="password" />
-              <br/>
-              <label htmlFor="checked">Siparişim kapıma bırakılsın.</label>
-              <input id="checked" type="checkbox"></input>
-              <br/>
-              <button type="submit">Login</button>
-            </form>
+          <div className="mt-20 ">
+            <label htmlFor="name-input"><h2 className="font-bold text-[20px]">Adınız Soyadınız :</h2></label>
+            <input
+            id="name-input"
+            type="text"
+              placeholder=""
+              className="border-solid border-2 border-zinc-200 w-full h-16 p-5 rounded-md mt-4"
+              onChange={nameChange}
+            />
           </div>
           <div className="mt-20 ">
-            <h2 className="font-bold text-[20px]">Sipariş Notu</h2>
+            <label htmlFor="adress-input"><h2 className="font-bold text-[20px]">Adres :</h2></label>
             <input
+            id="adress-input"
+              placeholder=""
+              className="border-solid border-2 border-zinc-200 w-full h-16 p-5 rounded-md mt-4"
+              onChange={adressChange}
+            />
+          </div>
+          <div className="mt-20 ">
+            <label htmlFor="email-input"><h2 className="font-bold text-[20px]">Email Adresiniz :</h2></label>
+            <input
+            id="email-input"
+            name="u-mail"
+            type="email"
+              placeholder="abc@abc.com"
+              className="border-solid border-2 border-zinc-200 w-full h-16 p-5 rounded-md mt-4"
+              onChange={emailChange}
+            />
+          </div>
+          <div className="mt-20 ">
+            <label htmlFor="phone-input"><h2 className="font-bold text-[20px]">Telefon Numaranız :</h2></label>
+            <input
+            id="phone-input"
+            type="number"
+              placeholder="+90"
+              className="border-solid border-2 border-zinc-200 w-full h-16 p-5 rounded-md mt-4"
+              onChange={phoneChange}
+            />
+          </div>
+          
+        
+          <div className="mt-20 ">
+            <label htmlFor="order-input"><h2 className="font-bold text-[20px]">Sipariş Notu :</h2></label>
+            <input
+            id="order-input"
               placeholder="Siparişinize eklemek istediğiniz not var mı ?"
               className="border-solid border-2 border-zinc-200 w-full h-16 p-5 rounded-md mt-4"
+              onChange={textChange}
             />
           </div>
 
@@ -190,7 +258,9 @@ console.log()
               </div>
               <div>
                 <Link to="/Success">
-                  <button className="w-80 h-12 bg-yellow hover:border-y-4 hover:border-zinc-500  rounded-sm">
+                  <button
+                  type="submit" 
+                  className="w-80 h-12 bg-yellow hover:border-y-4 hover:border-zinc-500  rounded-sm">
                     Sipariş Ver
                   </button>
                 </Link>

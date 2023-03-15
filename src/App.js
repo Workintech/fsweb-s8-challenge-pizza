@@ -9,10 +9,11 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Mainpage />} />
-        <Route path="/Select" element={<Select />} />
+        <Route path="/order-pizza" element={<Select />} />
         <Route path="/Success" element={<Success />} />
       </Routes>
     </BrowserRouter>
+  
   );
 };
 export default App;

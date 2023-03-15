@@ -10,8 +10,11 @@ import gazliicecek from "../Assets/Assets/esnek/mini-buttons/6.png.svg";
 import kart1 from "../Assets/Assets/esnek/kart-1.png";
 import kart2 from "../Assets/Assets/esnek/kart-2.png";
 import kart3 from "../Assets/Assets/esnek/kart-3.png";
-import css from "../components/page.css";
-
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+import css from  "../components/page.css";
 
 export default function Mainpage() {
   return (
@@ -21,7 +24,7 @@ export default function Mainpage() {
         <p className="text-[50px] text-center text-white font-extralight ">
           KOD ACIKTIRIR <br /> PIZZA, DOYURUR
         </p>
-        <Link to="/Select">
+        <Link to="/order-pizza">
           <button className="bg-yellow px-12 py-3 rounded-full font-bold my-6 hover:text-white hover:bg-amber-500 active:bg-lime-700 active:text-white hover:pos ">
             ACIKTIM
           </button>
@@ -34,7 +37,7 @@ export default function Mainpage() {
           YENİ! Kore
           </Link>
           <span className="text-white"> - </span>
-          <Link to="" className="text-black pr-5   hover:text-red no-underline">
+          <Link to="/order-pizza" className="text-black pr-5   hover:text-red no-underline">
           <img className="inline pr-5" src={pizza}></img>
           Pizza
           </Link>
@@ -57,14 +60,79 @@ export default function Mainpage() {
           <Link to="" className="text-black pr-5  hover:text-red no-underline">
           <img className="inline pr-5" src={gazliicecek}></img>
           Gazlı İçecekler
-          </Link><div className="bg-white text-center grid place-items-center place-content-center pt-7">
+          </Link><body><div className="bg-white text-center grid place-items-center place-content-center pt-7">
         <div className="pb-10 mr-left">
-          <img className="kart1" src={kart1}></img>
+            <div id="imgPlace">
+              <img className="kart1" src={kart1}></img>
+              <h1>Özel<br/>Lezzetus</h1>
+              <p>Position:Absolute Acı Burger</p>
+              <Link to="/order-pizza">
+          <button className="bg-white px-12 py-3 rounded-full font-bold my-6 hover:text-white hover:bg-yellow hover:white active:bg-lime-700 active:text-white hover:pos ">
+            SİPARİŞ VER
+          </button>
+        </Link>
+              </div>
           <img className="kart2" src={kart2}></img>
           <img className="kart3" src={kart3}></img>
 
           </div>
-          </div>
+          </div><div>
+            <p id="metin">en çok paketlenen menüler</p>
+            <h1 id="metin2">Acıktıran Kodlara Doyuran Lezzetler</h1>
+          </div><Link to="/" className="text-black pr-15  hover:text-red no-underline">
+          <button variant="outlined"><img className="inline pr-5" src={kore}></img>
+          Ramen</button>
+          </Link>
+          <span className="text-white"> - </span>
+          <Link to="/order-pizza" className="text-black pr-5   hover:text-red no-underline">
+          <img className="inline pr-5" src={pizza}></img>
+          Pizza
+          </Link>
+          <span className="text-white"> - </span>
+          <Link to="/Select" className="text-black pr-5  hover:text-red no-underline">
+          <img className="inline pr-5" src={burger}></img>
+          Burger
+          </Link>
+          <span className="text-white"> - </span>
+          <Link to="" className="text-black pr-5   hover:text-red no-underline">
+          <img className="inline pr-5" src={kizartmalar}></img>
+          French fries
+          </Link>
+          <span className="text-white"> - </span>
+          <Link to="" className="text-black pr-5   hover:text-red no-underline">
+          <img className="inline pr-5" src={fastfood}></img>
+          Fast food
+          </Link>
+          <span className="text-white"> - </span>
+          <Link to="" className="text-black pr-5  hover:text-red no-underline">
+          <img className="inline pr-5" src={gazliicecek}></img>
+          Soft drinks
+          </Link></body>
+         
+<footer>
+<div class="footer">
+<div class="row">
+<a href="#"><i class="fa fa-facebook"></i></a>
+<a href="#"><i class="fa fa-instagram"></i></a>
+<a href="#"><i class="fa fa-youtube"></i></a>
+<a href="#"><i class="fa fa-twitter"></i></a>
+</div>
+
+<div class="row">
+<ul>
+<li><a href="#">Contact us</a></li>
+<li><a href="#">Our Services</a></li>
+<li><a href="#">Privacy Policy</a></li>
+<li><a href="#">Terms & Conditions</a></li>
+<li><a href="#">Career</a></li>
+</ul>
+</div>
+
+<div class="row">
+INFERNO Copyright © 2021 Inferno - All rights reserved || Designed By: Mahesh 
+</div>
+</div>
+</footer>
 
         </div>
       </div></>
