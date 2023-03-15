@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../logo.svg";
 import { Link } from "react-router-dom";
-import img from "../Assets/Assets/food-2.png";
+import img from "../Assets/Assets/esnek/esnek-form-banner.png";
 
 export default function Order() {
   const checkData = [
@@ -20,34 +20,45 @@ export default function Order() {
     { id: "13", value: "Soğan", status: false },
     { id: "14", value: "Sarımsak", status: false },
   ];
+  const Form = () => {
+    const formSubmit = (e) => {
+      e.preventDefault();
+    };
+  };
+
+  const nameChange = (e) => {
+    console.log()
+  } 
+  
   const mailChangeHandler = () => {
 console.log()
   };
   return (
     <div>
       <div className="bg-red text-center grid place-items-center place-content-center">
-        <img src={logo} className="pt-10 pb-8  "></img>
-        <div className="pb-6 mr-center text-[20px]">
-          <Link to="/" className="text-white hover:text-black no-underline">
+        <img src={logo} className="pt-10 pb-8 "></img> 
+      </div>
+            <img src={img} className="pt-0 pb-5"></img>
+            <div className="pb-6 mr-center text-[20px]">
+          <Link to="/" className="text-black hover:text-red no-underline">
             Anasayfa
           </Link>
-          <span className="text-white"> - </span>
-          <Link to="" className="text-white  hover:text-black no-underline">
+          <span className="text-black"> - </span>
+          <Link to="" className="text-black  hover:text-red no-underline">
             Seçenekler
           </Link>
-          <span className="text-white"> - </span>
-          <Link to="/Select" className="text-white  hover:text-black no-underline">
+          <span className="text-black"> - </span>
+          <Link to="/Select" className="text-black  hover:text-red no-underline">
             Sipariş Oluştur
           </Link>
-
-        </div>
-      </div>
-      <div className="w-1/3 m-auto">
-        <h1 className="font-bold font-sans text-[30px] text-center pt-10 text-zinc-700">
-          Position Absolute
-          <div>Acı Pizza
-            <img src={img} className="pt-8 pb-5 pl-8"></img>
           </div>
+            <div className="w-1/3 m-auto">
+        <h1 className="font-bold font-sans text-[25px] text-left pt-10 text-zinc-700">
+          Position Absolute Acı Pizza
+            
+
+       
+      
         </h1>
         <div className="flex items-center justify-between py-10">
           <p className="font-bold text-[30px]">85.50 ₺</p>
@@ -94,7 +105,8 @@ console.log()
               </div>
             </div>
             <div className="mr-32">
-              <h3 className="font-bold text-[18px] mt-10 mb-4">
+              <h3 className="font-bold text-[18px] mt-10 mb-4"
+              >
                 Hamur Seç <span className="text-red">*</span>
               </h3>
               <div>
@@ -130,8 +142,13 @@ console.log()
             <form>
               <label htmlFor="user-mail">Email</label>
               <input id="user-mail" type="text" onChange={mailChangeHandler} />
+              <br/>
               <label htmlFor="user-pass">Password</label>
               <input type="password" />
+              <br/>
+              <label htmlFor="checked">Siparişim kapıma bırakılsın.</label>
+              <input id="checked" type="checkbox"></input>
+              <br/>
               <button type="submit">Login</button>
             </form>
           </div>
@@ -147,13 +164,13 @@ console.log()
           <hr className="my-10 border-zinc-500" />
           <div className="flex justify-between">
             <div className="flex justify-start">
-              <button className="w-12 h-12 border rounded-md bg-yellow hover:bg-amber-200">
+              <button className="w-12 h-12 border rounded-md bg-white hover:bg-yellow">
                 -
               </button>
               <div className="w-12 h-12 border rounded-md flex items-center justify-center">
                 1
               </div>
-              <button className="w-12 h-12 border rounded-md bg-yellow hover:bg-amber-200">
+              <button className="w-12 h-12 border rounded-md bg-white hover:bg-yellow">
                 +
               </button>
             </div>

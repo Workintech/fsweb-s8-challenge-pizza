@@ -1,0 +1,21 @@
+.kart1{
+    display:flex;
+    border-radius: 5%; 
+    max-width:60%;
+    float:left;
+    padding: 20px;
+}
+.kart2{
+    border-radius: 3%;
+    max-width:50%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+
+}
+
+.kart3{
+    border-radius: 3%;
+    max-width:50%;
+         
+}
