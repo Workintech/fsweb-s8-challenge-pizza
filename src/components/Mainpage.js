@@ -114,14 +114,7 @@ export default function Mainpage() {
           <img className="inline pr-5" src={gazliicecek}></img>
           Soft drinks
           </Link></body>
-          <div>
-            <div id="food1"><img className="" src={food1}></img>
-            <h1>Terminal Pizza</h1></div>
-            {/* <img src={food2}></img> */}
-            <div id="food3"><img className="" src={food3}></img>
-            <h1>useEffect Tavuklu Burger</h1></div>
-          </div>
-         
+          
 <footer>
 <div class="footer">
 <div class="row">
