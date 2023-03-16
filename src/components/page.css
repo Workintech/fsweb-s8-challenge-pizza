@@ -97,7 +97,7 @@
 }
 .footer{
     margin-top: 55%;
-    
+
 }
 
 body{
@@ -162,3 +162,20 @@ body{
     .body {
         background-color:#5F5F5F ;
     }
+
+    .row {
+        display:flex;
+    }
+
+    #food1 {
+        text-align: start;
+        margin-top: 80px;
+    }
+
+    #food3 {
+       text-align: start;
+       margin-left: 1000px;
+     
+    }
+
+

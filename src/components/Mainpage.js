@@ -10,6 +10,12 @@ import gazliicecek from "../Assets/Assets/esnek/mini-buttons/6.png.svg";
 import kart1 from "../Assets/Assets/esnek/kart-1.png";
 import kart2 from "../Assets/Assets/esnek/kart-2.png";
 import kart3 from "../Assets/Assets/esnek/kart-3.png";
+import icon1 from "../Assets/Assets/esnek/icon-1.png";
+import icon2 from "../Assets/Assets/esnek/icon-2.png";
+import icon3 from "../Assets/Assets/esnek/icon-3.png";
+import food1 from "../Assets/Assets/esnek/food-1.png";
+// import food2 from "../Assets/Assets/esnek/insta/food-2.png";
+import food3 from "../Assets/Assets/esnek/food-3.png";
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
@@ -84,7 +90,7 @@ export default function Mainpage() {
           Ramen</button>
           </Link>
           <span className="text-white"> - </span>
-          <Link to="/order-pizza" className="text-black pr-5   hover:text-red no-underline">
+          <Link to="/order-pizza" className="text-black pr-5  hover:text-red no-underline">
           <img className="inline pr-5" src={pizza}></img>
           Pizza
           </Link>
@@ -108,6 +114,13 @@ export default function Mainpage() {
           <img className="inline pr-5" src={gazliicecek}></img>
           Soft drinks
           </Link></body>
+          <div>
+            <div id="food1"><img className="" src={food1}></img>
+            <h1>Terminal Pizza</h1></div>
+            {/* <img src={food2}></img> */}
+            <div id="food3"><img className="" src={food3}></img>
+            <h1>useEffect Tavuklu Burger</h1></div>
+          </div>
          
 <footer>
 <div class="footer">
@@ -120,16 +133,28 @@ export default function Mainpage() {
 
 <div class="row">
 <ul>
-<li><a href="#">Contact us</a></li>
-<li><a href="#">Our Services</a></li>
-<li><a href="#">Privacy Policy</a></li>
-<li><a href="#">Terms & Conditions</a></li>
-<li><a href="#">Career</a></li>
+<li><Link to="https://duckduckgo.com/?q=istanbul&atb=v367-7__&ia=web&iaxm=about" className="text-black pr-15  hover:text-red no-underline">
+          <img className="inline pr-5" src={icon1}></img>
+          341 Londonderry Road,<div>
+            Istanbul Türkiye
+          </div>
+          </Link>
+          <Link to="" className="text-black pr-15  hover:text-red no-underline">
+          <img className="inline pr-5" src={icon2}></img>
+          aciktim@teknolojikyemekler.com
+          </Link>
+          <Link to="" className="text-black pr-15  hover:text-red no-underline">
+          <img className="inline pr-5" src={icon3}></img>
+          +90 216 123 45 67
+          </Link></li>
+<li><a href="#">Sıccacık Menuler</a></li>
+<li><a href="#">Instagram</a></li>
+
 </ul>
 </div>
 
 <div class="row">
-INFERNO Copyright © 2021 Inferno - All rights reserved || Designed By: Mahesh 
+    © 2023 Teknolojik Yemekler
 </div>
 </div>
 </footer>
