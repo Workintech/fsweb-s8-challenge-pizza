@@ -1,17 +1,18 @@
-import React from "react";
+// import React from "react";
+import React, { useState, useEffect } from 'react'
 import logo from "../logo.svg";
 import { Link } from "react-router-dom";
 import img from "../Assets/Assets/esnek/esnek-form-banner.png";
 import * as Yup from "yup";
 import axios from "axios";
-// import {
-//   Form,
-//   FormGroup,
-//   Input,
-//   Label,
-//   Button,
-//   FormFeedback,
-// } from "reactstrap";
+import {
+  Form,
+  FormGroup,
+  Input,
+  Label,
+  Button,
+  FormFeedback,
+} from "reactstrap";
 
 export default function Order() {
   const checkData = [
@@ -30,6 +31,28 @@ export default function Order() {
     { id: "13", value: "Soğan", status: false },
     { id: "14", value: "Sarımsak", status: false },
   ];
+
+  const [adet, adetGuncelle] = useState(1);
+  
+  const [formErrors, setFormErrors] = useState({
+    isim: '',
+    boy: '',
+    sos: '',
+    malzemeler: '',
+    not: '',
+  })
+
+  const formSchema = Yup.object().shape({
+    isim: Yup.string()
+      .required('İsim alanı zorunlu')
+      .min(2, 'En az 2 harf olmalı'),
+    boy: Yup.string().required('Pizza boyunuzu seçmeniz gerekiyor.'),
+    sos: Yup.string().required('Pizza sosu seçmeniz gerekiyor.'),
+    malzemeler: Yup.array().max(10, 'En fazla 10 malzeme seçebilirsiniz.'),
+    not: Yup.string(),
+  })
+
+
   const Form = () => {
     
     
@@ -74,7 +97,7 @@ console.log()
   return (
     <div>
       <div className="bg-red text-center grid place-items-center place-content-center">
-        <img src={logo} className="pt-10 pb-8 "></img> 
+        <img src={logo} className="pt-10 pb-8"></img> 
       </div>
             <img src={img} className="position"></img>
             <div className="links">
@@ -100,8 +123,8 @@ console.log()
         </h1>
         <div className="flex items-center justify-between py-10">
           <p className="font-bold text-[30px]">85.50 ₺</p>
-          <p className="ml-44 text-[19px] font-bold text-zinc-600">4.9</p>
-          <p className="text-[19px] text-zinc-400 font-bold">(200)</p>
+          <p className="ml-48 text-[19px] font-bold text-zinc-600">4.9</p>
+          <p className="text-[19px] text-zinc-400 font-bold mr-10">(200)</p>
 
         </div>
         <h2 className="text-zinc-400 font-Barlow text-[15px] font-bold">
@@ -139,7 +162,7 @@ console.log()
                 <input type="radio" name="boyut" id="buyuk" />
                 <label htmlFor="buyuk" className="ml-3">
                   Büyük
-                </label>
+                </label><FormFeedback>{formErrors.boy}</FormFeedback>
               </div>
             </div>
             <div className="mr-32">
@@ -172,58 +195,58 @@ console.log()
                   <label htmlFor={item.id} className="ml-4">
                     {item.value}
                   </label>
+              
                 </div>
               ))}
             </div>
           </div>
-          <div className="mt-20 ">
-            <label htmlFor="name-input"><h2 className="font-bold text-[20px]">Adınız Soyadınız :</h2></label>
+          <div className="mt-12 ">
+            <label htmlFor="name-input"><h2 className="font-bold text-[18px]">Adınız Soyadınız :</h2></label>
             <input
             id="name-input"
             type="text"
               placeholder=""
-              className="border-solid border-2 border-zinc-200 w-full h-16 p-5 rounded-md mt-4"
+              className="border-solid border-2 border-zinc-200 w-80 h-12 p-5 rounded-md mt-4"
               onChange={nameChange}
+              invalid={formErrors.isim}
             />
-          </div>
-          <div className="mt-20 ">
-            <label htmlFor="adress-input"><h2 className="font-bold text-[20px]">Adres :</h2></label>
+          </div><div className="mt-12 ">
+            <label htmlFor="phone-input"><h2 className="font-bold text-[18px]">Telefon Numaranız :</h2></label>
             <input
-            id="adress-input"
-              placeholder=""
-              className="border-solid border-2 border-zinc-200 w-full h-16 p-5 rounded-md mt-4"
-              onChange={adressChange}
+            id="phone-input"
+            type="number"
+              placeholder="(+90)"
+              className="border-solid border-2 border-zinc-200 w-80 h-12 p-5 rounded-md mt-4"
+              onChange={phoneChange}
             />
           </div>
-          <div className="mt-20 ">
-            <label htmlFor="email-input"><h2 className="font-bold text-[20px]">Email Adresiniz :</h2></label>
+          <div className="mt-12 ">
+            <label htmlFor="email-input"><h2 className="font-bold text-[18px]">Email Adresiniz :</h2></label>
             <input
             id="email-input"
             name="u-mail"
             type="email"
               placeholder="abc@abc.com"
-              className="border-solid border-2 border-zinc-200 w-full h-16 p-5 rounded-md mt-4"
+              className="border-solid border-2 border-zinc-200 w-80 h-12 p-5 rounded-md mt-4"
               onChange={emailChange}
             />
           </div>
-          <div className="mt-20 ">
-            <label htmlFor="phone-input"><h2 className="font-bold text-[20px]">Telefon Numaranız :</h2></label>
+           <div className="mt-12 ">
+            <label htmlFor="adress-input"><h2 className="font-bold text-[18px]">Adres :</h2></label>
             <input
-            id="phone-input"
-            type="number"
-              placeholder="+90"
-              className="border-solid border-2 border-zinc-200 w-full h-16 p-5 rounded-md mt-4"
-              onChange={phoneChange}
+            id="adress-input"
+              placeholder=""
+              className="border-solid border-2 border-zinc-200 w-80 h-12 p-5 rounded-md mt-4"
+              onChange={adressChange}
             />
           </div>
-          
         
-          <div className="mt-20 ">
-            <label htmlFor="order-input"><h2 className="font-bold text-[20px]">Sipariş Notu :</h2></label>
+          <div className="mt-12 ">
+            <label htmlFor="order-input"><h2 className="font-bold text-[18px]">Sipariş Notu :</h2></label>
             <input
             id="order-input"
               placeholder="Siparişinize eklemek istediğiniz not var mı ?"
-              className="border-solid border-2 border-zinc-200 w-full h-16 p-5 rounded-md mt-4"
+              className="border-solid border-2 border-zinc-200 w-full h-14 p-5 rounded-md mt-4"
               onChange={textChange}
             />
           </div>
@@ -232,13 +255,15 @@ console.log()
           <hr className="my-10 border-zinc-500" />
           <div className="flex justify-between">
             <div className="flex justify-start">
-              <button className="w-12 h-12 border rounded-md bg-white hover:bg-yellow">
+              <button className="w-12 h-12 border rounded-md bg-white hover:bg-yellow"
+              onClick={ () => adetGuncelle(adet - 1)}>
                 -
               </button>
               <div className="w-12 h-12 border rounded-md flex items-center justify-center">
-                1
+                {adet}
               </div>
-              <button className="w-12 h-12 border rounded-md bg-white hover:bg-yellow">
+              <button className="w-12 h-12 border rounded-md bg-white hover:bg-yellow"
+              onClick={ () => adetGuncelle(adet + 1)}>
                 +
               </button>
             </div>
