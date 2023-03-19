@@ -33,6 +33,10 @@ export default function Order() {
   ];
 
   const [adet, adetGuncelle] = useState(1);
+
+  const [malzeme, malzemeGuncelle] = useState(0);
+
+  const [toplam, toplamGuncelle] = useState(85.50);
   
   const [formErrors, setFormErrors] = useState({
     isim: '',
@@ -41,6 +45,10 @@ export default function Order() {
     malzemeler: '',
     not: '',
   })
+
+  const onClick = () => {
+
+  };
 
   const formSchema = Yup.object().shape({
     isim: Yup.string()
@@ -88,6 +96,7 @@ export default function Order() {
   
   const mailChangeHandler = () => {
 console.log()
+
 
 // useEffect(()=> {
 //   console.log("user = ", user);
@@ -146,19 +155,19 @@ console.log()
               <h3 className="font-bold text-[18px] mt-10 mb-4">
                 Boyut Seç <span className="text-red">*</span>
               </h3>
-              <div className="flex items-center text-zinc-500 font-mono">
+              <div className="mt-4 font-bold text-zinc-500 hover:text-zinc-800">
                 <input type="radio" name="boyut" id="kucuk" />
                 <label htmlFor="kucuk" className="ml-3">
                   Küçük
                 </label>
               </div>
-              <div className="flex items-center my-4 text-zinc-500 font-mono">
+              <div className="mt-4 font-bold text-zinc-500 hover:text-zinc-800">
                 <input type="radio" name="boyut" id="orta" />
                 <label htmlFor="orta" className="ml-3">
                   Orta
                 </label>
               </div>
-              <div className="flex items-center text-zinc-500 font-mono">
+              <div className="mt-4 font-bold text-zinc-500 hover:text-zinc-800">
                 <input type="radio" name="boyut" id="buyuk" />
                 <label htmlFor="buyuk" className="ml-3">
                   Büyük
@@ -172,7 +181,7 @@ console.log()
               </h3>
               <div>
                 <select className="block w-full p-2 mb-6 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                  <option disabled>Hamur Kalınlığı</option>
+                  <option disabled>-Hamur Kalınlığı Seç-</option>
                   <option value="1">Standart</option>
                   <option value="2">Kalın</option>
                   <option value="3">İnce</option>
@@ -185,13 +194,16 @@ console.log()
             <h3 className="text-zinc-500">
               En Fazla 10 malzeme seçebilirsiniz. 5₺
             </h3>
-            <div className="grid grid-cols-3  mb-20 mt-4">
+            
+            <div className="grid grid-cols-3  mb-20 mt-4"
+            >
               {checkData.map((item) => (
                 <div
                   key={item.id}
                   className="mt-4 font-bold text-zinc-500 hover:text-zinc-800"
                 >
-                  <input id={item.id} type="checkbox" onChange={checkChange} value={item.value} />
+                  <input id={item.id} type="checkbox" onChange={checkChange} value={item.value}
+                  onClick={ () => malzemeGuncelle(malzeme + 5)} />
                   <label htmlFor={item.id} className="ml-4">
                     {item.value}
                   </label>
@@ -256,7 +268,7 @@ console.log()
           <div className="flex justify-between">
             <div className="flex justify-start">
               <button className="w-12 h-12 border rounded-md bg-white hover:bg-yellow"
-              onClick={ () => adetGuncelle(adet - 1)}>
+              onClick={ () => adetGuncelle (adet - 1)}>
                 -
               </button>
               <div className="w-12 h-12 border rounded-md flex items-center justify-center">
@@ -274,11 +286,11 @@ console.log()
                 </div>
                 <div className="flex justify-between font-Barlow ">
                   <div>Seçimler</div>
-                  <div>25.00₺</div>
+                  <div>{malzeme}₺</div>
                 </div>
                 <div className="flex justify-between font-Barlow font-bold text-red">
-                  <div>Toplam</div>
-                  <div>110.50₺</div>
+                  <div>Toplam </div>
+                  <div>{toplam * adet + malzeme}₺</div>
                 </div>
               </div>
               <div>
