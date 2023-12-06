@@ -1,3 +1,6 @@
+
+// Ana uygulama bileşeni
+
 import React from "react";
 import {
   BrowserRouter,

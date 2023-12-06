@@ -1,11 +1,15 @@
+// Sipariş tamamlama sayfası
 import React ,{ useState } from "react";
 import { Link } from "react-router-dom";
 import "./Order.css";
 import axios from 'axios';
 import { Card,CardBody,CardTitle,CardSubtitle,CardText} from 'reactstrap';
+
+
 const Final = () => {
     const [ setData] = useState(null);
-
+    
+ // POST isteği yapma fonksiyonu
     function makePostRequest() {
         axios
           .post('https://reqres.in/api/orders')

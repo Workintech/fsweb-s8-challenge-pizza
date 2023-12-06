@@ -1,3 +1,5 @@
+
+// Ana sayfa bileşeni
 import React from "react";
 import "./HomePage.css";
 import {
@@ -22,6 +24,7 @@ import { GiFrenchFries } from "react-icons/gi";
 import { CiPizza } from "react-icons/ci";
 import { MdOutlineFastfood } from "react-icons/md";
 
+// Ana sayfa bileşeni olan HomePage
 const HomePage = () => {
   return (
     <div className="Top">
@@ -35,15 +38,16 @@ const HomePage = () => {
         <div />
 
         <div />
-
-        <div className="topbutton">
+        
+        
+        <div className="topbutton">  // Sipariş Ver Butonu
           <Link to="/pizza">
             <button id="order-pizza">ACIKTIM</button>
           </Link>
         </div>
       </div>
-      <div className="socialtop">
-        <FaPizzaSlice></FaPizzaSlice>
+      <div className="socialtop">  
+        <FaPizzaSlice></FaPizzaSlice> //Sosyal Medya İkonları
         <IoFastFoodOutline></IoFastFoodOutline>
         <GiFrenchFries></GiFrenchFries>
         <FaHamburger></FaHamburger>

@@ -1,3 +1,5 @@
+// Ana uygulama bileşeni
+
 import React from "react";
 import "./Order.css";
 import * as Yup from "yup";
@@ -6,6 +8,8 @@ import { Card,Button,CardBody,CardTitle,CardSubtitle,CardText} from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from "react-router-dom";
 
+
+// Yup şema tanımı
 const formSchema = Yup.object().shape({
   isimDegeri: Yup.string()
     .required("İsim alanı zorunludur")
@@ -17,6 +21,8 @@ const Check = () => {
   const [formData, setFormData] = useState({ Malzeme: [] });
   const [buttonDisabledMi, setButtonDisabledMi] = useState(true);
   const [errors, setErrors] = useState({ Malzeme: "" });
+
+   // Formun geçerli olup olmadığını kontrol et
   useEffect(() => {
     formSchema.isValid(formData).then((valid) => setButtonDisabledMi(!valid));
   }, [formData]);
@@ -37,7 +43,8 @@ const Check = () => {
         }));
       });
   };
-
+  
+  // Input değiştiğinde çalışan fonksiyon
   function handleChange(event) {
     const { value, type, name } = event.target;
   
