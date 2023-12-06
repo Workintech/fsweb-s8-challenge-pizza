@@ -15,8 +15,8 @@ Not\* Bu dökümanın en sonunda da, sunumda seni değerlendireceğimiz başlık
 ### Veri Diagramları
 
 #### Routes
+ 
 
-```mermaid
 graph LR
 A((Anasayfa)) -->B([Sipariş Ver Butonu]) --> C[Sipariş Formu] -->Z((Sipariş Onayı))
 ```

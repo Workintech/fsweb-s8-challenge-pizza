@@ -1,0 +1,136 @@
+.Top h1 {
+  text-align: center;
+}
+
+.topbutton button {
+  border-radius: 20px;
+  margin-left: 670px;
+  margin-bottom: 550px;
+
+
+  background-color: #FDC913;
+}
+
+
+.Main {
+  background: url("mvp-banner.png");
+  margin: 0;
+  padding: 0;
+  font-family: cursive;
+
+  background-size: cover;
+}
+
+h1 {
+  color: white;
+}
+
+.mid {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-bottom: 250px;
+
+  text-align: center;
+  background-color: #FAF7F2;
+}
+
+.mid img {
+
+  height: 400px;
+}
+
+.twoside {
+  gap: 20px
+}
+
+.twoside img {
+  width: 40x;
+  height: 150px;
+
+}
+
+.mid button {
+  background-color: #FDC913;
+  color: black;
+}
+
+.footertop h3 {
+  color: red;
+  font-style: oblique;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.footertop h2 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.footertop {
+  text-align: center;
+  margin-bottom: 100px;
+  background-color: white;
+
+}
+
+.footerbot {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  font-family: cursive;
+  text-align: center;
+}
+
+.footerbot img {
+  margin-left: 100px;
+  width: 12rem;
+  height: 150px;
+
+}
+
+.comcontainer {
+  display: flex;
+  justify-content: baseline;
+  gap: 100px;
+  background-color: black;
+  color: white;
+  font-family: cursive;
+  margin-top: 20px;
+}
+
+.insta {
+  margin-left: 400px;
+  margin-bottom: 50px;
+}
+
+.footersbot {
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+.social {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+
+}
+
+.socialtop {
+  font-size: 2.3em;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+
+  color: #CE2829;
+}
+
+.socialbot {
+  font-size: 2.5em;
+  margin-bottom: 150px;
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-around;
+
+  color: #CE2829;
+}

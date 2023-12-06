@@ -1,0 +1,125 @@
+.TopFood h1{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: oblique;
+    color: white;
+}
+.order ul li{
+  
+ display: inline-block;
+flex-wrap: wrap;
+font-size: larger;
+   color: white;
+   justify-content: center;
+    
+}
+
+
+.order{
+    text-align: center;
+    background-color: white;
+    font-family: cursive;
+}
+.TopFood{
+    background-color:  #CE2829;
+}
+
+.allfive{
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+   
+}
+.firstfive label{
+   display: inline-block;
+   
+}
+.final{
+    display: flex;
+    justify-content: center;
+}
+.EndTop h1{
+    color:white;
+    text-align: center;
+    background-color: #CE2829;
+}
+.EndTop{
+    background-color: #CE2829;
+    font-family: cursive;
+}
+
+.end h1{
+
+
+    padding: 6rem 2rem;
+    margin-bottom: 25px;
+ 
+}
+.disbut button {
+background-color:#FDC913;
+   
+}
+.disbut p{
+    color:black;
+    
+}
+.disbut a{
+    text-decoration:none
+}
+
+.enduse a{
+    text-decoration: none;
+}
+
+
+.comcontainer{
+    display: flex;
+    justify-content: baseline;
+    gap: 100px;
+    background-color: black;
+    color: white;
+    font-style: oblique;
+    margin-top: 20px;
+  }
+  .insta{
+    margin-left: 400px;
+    margin-bottom: 50px;
+  }
+  .footersbot{
+    background-color: black;
+    color: white;
+  }
+  .end h3{
+    color: #FDC913;
+    text-align: center;
+    font-style: oblique;
+  }
+  .enduse h3{
+    color: #FDC913;
+    text-align: center;
+    font-style: oblique;
+    margin-top: 50px;
+  }
+  .end ul li{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+  }
+  .hesap{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    
+    color: white;
+  }
+  .bodycard{
+    background-color: #CE2829;
+  }
+  .social{
+    display: flex;
+    gap:20px;
+    justify-content: center;
+    
+  }
