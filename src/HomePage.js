@@ -40,14 +40,14 @@ const HomePage = () => {
         <div />
         
         
-        <div className="topbutton">  // Sipariş Ver Butonu
+        <div className="topbutton">  
           <Link to="/pizza">
             <button id="order-pizza">ACIKTIM</button>
           </Link>
         </div>
       </div>
       <div className="socialtop">  
-        <FaPizzaSlice></FaPizzaSlice> //Sosyal Medya İkonları
+        <FaPizzaSlice></FaPizzaSlice> 
         <IoFastFoodOutline></IoFastFoodOutline>
         <GiFrenchFries></GiFrenchFries>
         <FaHamburger></FaHamburger>
