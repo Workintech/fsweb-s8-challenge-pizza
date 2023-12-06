@@ -48,7 +48,7 @@ const Order = () => {
           <h2>Teknolojik Yemekler </h2>
           <img
             alt="Sample"
-            src={`${process.env.PUBLIC_URL}/esnek/icon-1.png`}
+            src={`${process.env.PUBLIC_URL}/tasinan/icon-1.png`}
           />
           <p>
             {" "}
@@ -56,12 +56,12 @@ const Order = () => {
           </p>
           <img
             alt="Sample"
-            src={`${process.env.PUBLIC_URL}/esnek/icon-2.png`}
+            src={`${process.env.PUBLIC_URL}/tasinan/icon-2.png`}
           />
           <p>acıktım@teknolojikyemekler.com </p>
           <img
             alt="Sample"
-            src={`${process.env.PUBLIC_URL}/esnek/icon-3.png`}
+            src={`${process.env.PUBLIC_URL}/tasinan/icon-3.png`}
           />
           <p>+90 216 784 25 36</p>
         </div>
@@ -79,29 +79,29 @@ const Order = () => {
           <div className="instatop">
             <img
               alt="Sample"
-              src={`${process.env.PUBLIC_URL}/esnek/insta/li-0.png`}
+              src={`${process.env.PUBLIC_URL}/tasinan/insta/li-0.png`}
             />
             <img
               alt="Sample"
-              src={`${process.env.PUBLIC_URL}/esnek/insta/li-1.png`}
+              src={`${process.env.PUBLIC_URL}/tasinan/insta/li-1.png`}
             />
             <img
               alt="Sample"
-              src={`${process.env.PUBLIC_URL}/esnek/insta/li-2.png`}
+              src={`${process.env.PUBLIC_URL}/tasinan/insta/li-2.png`}
             />
           </div>
           <div className="instabot">
             <img
               alt="Sample"
-              src={`${process.env.PUBLIC_URL}/esnek/insta/li-3.png`}
+              src={`${process.env.PUBLIC_URL}/tasinan/insta/li-3.png`}
             />
             <img
               alt="Sample"
-              src={`${process.env.PUBLIC_URL}/esnek/insta/li-4.png`}
+              src={`${process.env.PUBLIC_URL}/tasinan/insta/li-4.png`}
             />
             <img
               alt="Sample"
-              src={`${process.env.PUBLIC_URL}/esnek/insta/li-5.png`}
+              src={`${process.env.PUBLIC_URL}/tasinan/insta/li-5.png`}
             />
           </div>
         </div>
