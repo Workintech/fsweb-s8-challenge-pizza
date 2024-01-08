@@ -1,6 +1,10 @@
 # Sprint Challenge: _Tek Sayfa Uygulamalar SPA_
 
 SPA: Single Page Application
+```bash
+  npm install
+  npm run dev
+````
 
 ## Proje Açıklaması
 
@@ -76,6 +80,7 @@ Sarı #FDC913, Açık Gri: #5F5F5F, Koyu Gri #292929, Kırmızı #CE2829, Bej: #
 Logo proje klasöründe SVG olarak yüklü
 
 [Barlow](https://fonts.google.com/specimen/Barlow)
+[Roboto Contensed](https://fonts.google.com/specimen/Roboto+Condensed?preview.text=P%C4%B0ZZA%20ACIKTIRIR%20KOD%20DOYURUR&query=condensed&stroke=Sans+Serif)
 [Quattrocento](https://fonts.google.com/specimen/Quattrocento)
 [Satisfy](https://fonts.google.com/specimen/Satisfy)
 
