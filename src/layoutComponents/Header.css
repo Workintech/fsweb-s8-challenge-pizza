@@ -1,0 +1,21 @@
+.MainHeader{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #CE2829;
+    padding: 3rem 0 1rem 0;
+    height: 20vh;
+}
+.logo{
+    width:22.5rem ;
+}
+@media(max-width:1360px){
+    .logo{
+        width: 60%;
+    }
+    .MainHeader{
+        padding: 0;
+        
+    }
+
+}

@@ -11,3 +11,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+@font-face {
+  font-family: 'Barlow-Black';
+  src: local('Barlow-Black'), url(./fonts/Barlow/Barlow-Black.ttf) format('ttf');
+}

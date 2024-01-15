@@ -1,0 +1,34 @@
+.header nav ul{
+    display: flex;
+    gap: .5rem;
+    list-style: none;
+    text-decoration: none;
+    margin-left: 29.8rem;
+   
+}
+.navLink{
+    color: whitesmoke;
+    text-decoration: none;
+}
+.header{
+    background-color: #CE2829;
+}
+.navLink:focus{
+    font-weight: bold;
+}
+@media(max-width:1360px){
+    .header nav{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 2rem;
+    }
+     .header nav ul{
+        /* align-items: center;
+        justify-content: center; */
+        margin-left: 0rem;
+        font-size: x-large;
+        gap:1rem
+       
+    } 
+}

@@ -1,0 +1,28 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100&family=Bebas+Neue&family=Quattrocento&display=swap');
+
+.result{
+    background-color: #CE2829;
+    height: 80vh;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+h1{
+    width: 37.7rem;
+    height: 12.18rem;
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom:4rem ;
+    line-height: 92px;
+    font-family: 'Barlow', serif;
+    font-weight: 400;
+    
+}
+@media(max-width:720px){
+    h1{
+        width: 80%;
+    }
+}

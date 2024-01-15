@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100&family=Bebas+Neue&family=Quattrocento&display=swap');
+
+.entryPage{
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: #CE2829;
+    text-align: center;
+     height: 80vh;
+   
+}
+
+.entryPage .banner{
+        width: 70vw;
+        height: 45vh;
+        display: flex;
+        line-height: 0px;
+        
+}
+.title{
+    padding-top: 1rem;
+    font-size: 3rem;
+    font-family: "Bebas Neue";
+    line-height: 3.5rem;
+    color:white ;
+      font-family: 'Barlow', sans-serif;  
+    
+    font-weight: 600;
+}
+.button{
+    background-color: #FDC913;
+    width: 6rem;
+    color: black;
+    margin-top: .5rem;
+    border-radius: 1.5rem;
+    margin-bottom: 2rem;
+    width: 11rem;
+    font-size: 1.3rem;
+    padding: 8px;
+    border: none ;
+    font-weight:500;
+   
+}
+@media(max-width:720px){
+   .title{
+    width: 20rem;
+    height: 6rem;
+    font-size: 2.4rem;
+    margin: 0 1rem 1rem 1rem;
+   }
+   .button{
+    margin: 0rem;
+    width: 10rem;
+    font-size: 1.5rem;
+   }
+   .entryPage .banner{
+     width: 92vw;
+     height: 40vh;
+   }
+}    
+@media(max-width:1360){
+    .title{
+        font-size: 5rem;
+    }
+}
