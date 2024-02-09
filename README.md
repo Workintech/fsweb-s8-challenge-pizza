@@ -14,7 +14,7 @@ S8 içinde de Workintech eğitmenlerine, adeta bir teknik mülakattaymış gibi,
 
 ## Önemli Notlar
 - Her aşamada, tasarımı birebir uygulamaya çalışmalısın.
-- Önce IT1 sonra IT2'ye geçmelisin. 
+- Önce İterasyon 1'i tamamlayıp, sonra İterasyon 2'ye geçmelisin. 
 - Görevleri yetiştirmek için, MUTLAKA tasarımların listelendiği sırayla ilerle. Proje planından şaşma. Önceki task yetişmeden sonrakine geçtiysen ve eksik varsa puanın kırılabilir. 
 - Metinler ve form alanı başlıklarını kendi istediğin gibi güncelleyebilirsin. Yine de kesinlikle **renkler ve yerleşimde** değişiklik istemiyoruz.
 - Sunumdan sonra dilersen sonrasında kendi portföyüne eklemeden önce için özelleştirebilirsin.
@@ -50,8 +50,8 @@ I--true-->Z((Submit))
 Bu sprint challenge'ında, bilgisayar başında karnı acıkan yazılımcılara yiyecek getirmek için tasarlanmış bir web sitesi **Teknolojik Yemekler**' markasına, _Anasayfa_, _Sipariş Formu_ ve _Sipariş Alındı_ sayfası oluşturarak bu konulardaki ustalığınızı göstereceksin.  
 Proje iki zorluk aşamalı,
 
-1.  **IT1**: ilk önce asgari yeterli ürün (IT1-Minimum Viable Product) aşamasına getirmeyi hedeflemelisin.
-2.  **Iterasyon-2**: İleri düzey görevlere eadece ama sadece, tasarımdaki IT1 kilometre taşına geldikten sonra başlamalısın. Buradaki gelişmiş görsel ve teknik problemleri çözmeyi IT1 sonrasında, aşağıda belirtilen sırada çözerek ilerlemelisin.
+1.  **İterasyon 1**: ilk önce asgari yeterli ürün (IT1-Minimum Viable Product) aşamasına getirmeyi hedeflemelisin.
+2.  **Iterasyon 2**: İleri düzey görevlere eadece ama sadece, tasarımdaki IT1 kilometre taşına geldikten sonra başlamalısın. Buradaki gelişmiş görsel ve teknik problemleri çözmeyi IT1 sonrasında, aşağıda belirtilen sırada çözerek ilerlemelisin.
 3.  Projenin iki aşamasının da gerekli görselleri proje klasöründe var. Ayrıca [**Figma Formatında**](https://www.figma.com/file/q0xPW5uCel3rdzFgpjR9lt/S7-Challange-Revize) formatındaki tasarıma bu adresten erişebilirsiniz.
 
 ## Aşama 1: Proje Kurulumu ve İterasyon 1
@@ -64,8 +64,8 @@ Proje iki zorluk aşamalı,
 - [ ] Comitinizi pushlayın: `git push origin main`
 - [ ] Farklı paketler kullanmaya çalışın.
 	- `axios`
-	- `toastify`
 	- `react-strap`
+	- `toastify`
 	- `tailwindcss`
 	- `cypress.io` v.b.
 
@@ -79,7 +79,11 @@ Zamanı verimli kullanmak için aşağıdaki sırayla geliştirme yapmanı tavsi
 
 #### Renk Kodları
 
-Sarı #FDC913, Açık Gri: #5F5F5F, Koyu Gri #292929, Kırmızı #CE2829, Bej: #FAF7F2
+1. Sarı #FDC913 
+2. Açık Gri: #5F5F5F 
+3. Koyu Gri #292929 
+4. Kırmızı #CE2829
+5. Bej: #FAF7F2
 
 #### Tasarımda Kullanılan Fontlar
 
@@ -334,15 +338,15 @@ IT1'i bitirdikten sonra çalışmanı daha da ileri götürebilirsin. Buradaki h
   - Testler, best practice'leri takip eder, kod tekrarını minimize eder ve test süitinin okunabilirliğini ve sürdürülebilirliğini artırır.
 
 ## 10. Açık uçlu soru: ... senaryosu gelişmiş yeni bir öğe eklemek gereklidir. 
- a) Bu yeni öğeyi eklemek için hangi form öğesi kullanılmalıdır? 
+ #### a) Bu yeni öğeyi eklemek için hangi form öğesi kullanılmalıdır? 
+ 
+ #### b) Bu yeni öğenin eklenmesi için adımlar nasıl olmalıdır?
 
- b) Bu yeni öğenin eklenmesi için adımlar nasıl olmalıdır?
+    - **1 (Gereksinimlerin Altında):**
+      - Yanlış yanıt ve hatalı akış.
+        
+    - **2 (Gereklilikleri Karşılıyor):**
+      - Doğru yanıt, doğru akış. 
 
-- **1 (Gereksinimlerin Altında):**
-  - Yanlış yanıt ve hatalı akış.
-    
-- **2 (Gereklilikleri Karşılıyor):**
-  - Doğru yanıt, doğru akış. 
-
-- **3 (Gereksinimleri Aşıyor):**
-  - Doğru yanıta ek farklı çözümler ve farklarını karşılaştırmak.
+    - **3 (Gereksinimleri Aşıyor):**
+      - Doğru yanıta ek farklı çözümler ve farklarını karşılaştırmak.
