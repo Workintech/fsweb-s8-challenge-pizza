@@ -13,6 +13,7 @@ function Header() {
     <>
       <div className="bg-[url('../../../public/assets/home/home-banner.png')] flex flex-row justify-center w-screen h-screen bg-cover bg-bottom bg-no-repeat  xs:bg-top">
         {" "}
+        <img src={gazliIcecek} alt="#" />
         <div className="w-4/12 h-1/2 flex flex-column items-center justify-center py-10 px-3 gap-y-6 xs:w-[100%] xs:my-8">
           <img
             className="w-[16rem]    xs:w-[18rem] xs:mt-[2.5rem] "
