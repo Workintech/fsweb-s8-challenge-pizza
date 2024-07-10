@@ -8,7 +8,7 @@ export default {
     extend:{
 
       backgroundImage:{
-        'home-banner':"url('./public/assets/home/home-banner.png')"
+        'home-banner':"url('/public/assets/home/home-banner.png')"
       },
 
       fontSize:{
