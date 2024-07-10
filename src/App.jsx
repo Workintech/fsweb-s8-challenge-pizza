@@ -9,6 +9,7 @@ function App() {
     <Switch>
       <Route path="/" exact>
         <Header></Header>
+        <Main></Main>
       </Route>
     </Switch>
   );

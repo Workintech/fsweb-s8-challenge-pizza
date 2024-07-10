@@ -8,7 +8,10 @@ export default {
     extend:{
 
       backgroundImage:{
-        'home-banner':"url('/public/assets/home/home-banner.png')"
+        'home-banner':"url('/public/assets/home/home-banner.png')",
+        'kart1':"url('/public/assets/cta/kart-1.png')",
+        'kart2':"url('/public/assets/cta/kart-2.png')",
+        'kart3':"url('/public/assets/cta/kart-3.png')"
       },
 
       fontSize:{
@@ -22,13 +25,15 @@ export default {
       'body': ['"Open Sans"'],
       'satisfy':['"Satisfy"'],
       'barlow' : ['"Barlow"'],
-      'roboto':['"Roboto Condensed"']
+      'roboto':['"Roboto Condensed"'],
+      'quatro': ['"Quattrocento"']
     },
     colors:{
       'yellow':'#FDC913',
       'bej':'#FAF7F2',
       'white':'white',
-      'red':'red'
+      'red':'red',
+      'bej':"#FAF7F2"
     },
     screens:{
       'xs':{'max':'540px'}
@@ -37,3 +42,4 @@ export default {
   },
   plugins: [],
 }
+
