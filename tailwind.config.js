@@ -6,6 +6,11 @@ export default {
   ],
   theme: {
     extend:{
+
+      backgroundImage:{
+        'home-banner':"url('./public/assets/home/home-banner.png')"
+      },
+
       fontSize:{
         'xs': '0.7rem'
       },
