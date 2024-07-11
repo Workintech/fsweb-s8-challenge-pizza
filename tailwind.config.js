@@ -33,7 +33,9 @@ export default {
       'bej':'#FAF7F2',
       'white':'white',
       'red':'red',
-      'bej':"#FAF7F2"
+      'bej':"#FAF7F2",
+      'gri':"#292929",
+      'softGri':"#5F5F5F"
     },
     screens:{
       'xs':{'max':'540px'}
