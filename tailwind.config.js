@@ -11,7 +11,8 @@ export default {
         'home-banner':"url('/public/assets/home/home-banner.png')",
         'kart1':"url('/public/assets/cta/kart-1.png')",
         'kart2':"url('/public/assets/cta/kart-2.png')",
-        'kart3':"url('/public/assets/cta/kart-3.png')"
+        'kart3':"url('/public/assets/cta/kart-3.png')",
+        "pizza":"url('/public/assets/pictures/form-banner.png')"
       },
 
       fontSize:{
@@ -45,4 +46,3 @@ export default {
   },
   plugins: [],
 }
-
