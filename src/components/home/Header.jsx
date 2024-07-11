@@ -60,7 +60,7 @@ function Header() {
       </div>
 
       <nav className="w-screen flex justify-center">
-        <div className="w-3/4 text-xs font-roboto py-3 flex justify-center items-center gap-x-7 flex-wrap xs:justify-between">
+        <div className="w-3/4 text-xs font-roboto py-2 flex justify-center items-center gap-x-7 flex-wrap xs:justify-between">
           {menuItems.map((item, index) => (
             <Navbar key={index} name={item.name} logo={item.logo}></Navbar>
           ))}

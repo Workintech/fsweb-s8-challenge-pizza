@@ -35,7 +35,8 @@ export default {
       'red':'red',
       'bej':"#FAF7F2",
       'gri':"#292929",
-      'softGri':"#5F5F5F"
+      'softGri':"#5F5F5F",
+      'black':"black"
     },
     screens:{
       'xs':{'max':'540px'}
