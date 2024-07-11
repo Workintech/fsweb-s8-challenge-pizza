@@ -70,7 +70,7 @@ function Main() {
               index == 1 ? (
                 <a
                   href=""
-                  className="w-[95px] rounded-full px-3 py-2 bg-black text-white flex justify-center items-center gap-x-2 xs:justify-start xs:py-4 xs:w-[100px]"
+                  className="w-[95px] rounded-full px-3 py-2 bg-gri text-white flex justify-center items-center gap-x-2 xs:justify-start xs:py-4 xs:w-[100px]"
                 >
                   <img className="w-6 xs:w-9" src={item.logo} alt="#" />
                   <span>{item.name}</span>
@@ -87,7 +87,7 @@ function Main() {
       {/* three Reacsrtrap Cars */}
       <section className="w-3/4 my-4 flex justify-center items-center gap-x-3 xs:flex-col xs:gap-y-3 xs:w-[90%] ">
         <Card
-          className="flex justify-center w-[20%] items-center border-none shadow-md py-2 xs:w-full"
+          className="cursor-pointer flex justify-center w-[20%] items-center border-none shadow-md py-2 xs:w-full"
           outline
         >
           <img className="w-40 " alt="Sample" src={food1} />
@@ -105,7 +105,7 @@ function Main() {
           </CardBody>
         </Card>
         <Card
-          className="flex w-[20%] justify-center items-center border-none shadow-md py-2 xs:w-full"
+          className="cursor-pointer flex w-[20%] justify-center items-center border-none shadow-md py-2 xs:w-full"
           outline
         >
           <img className="w-40 " alt="Sample" src={food2} />
@@ -123,7 +123,7 @@ function Main() {
           </CardBody>
         </Card>
         <Card
-          className="flex w-[20%] justify-center items-center border-none shadow-md py-2 xs:w-full"
+          className="cursor-pointer flex w-[20%] justify-center items-center border-none shadow-md py-2 xs:w-full"
           outline
         >
           <img className="w-40 " alt="Sample" src={food3} />

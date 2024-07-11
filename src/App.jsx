@@ -10,6 +10,7 @@ function App() {
       <Route path="/" exact>
         <Header></Header>
         <Main></Main>
+        <Footer></Footer>
       </Route>
     </Switch>
   );
