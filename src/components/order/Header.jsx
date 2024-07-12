@@ -3,7 +3,7 @@ import nameLogo from "../../../public/assets/home/logo.svg";
 function Header() {
   return (
     <>
-      <div className="w-screen p-2 bg-[#bc2525] flex flex-col justify-center items-center gap-y-2">
+      <div className="w-screen p-2 bg-[#bc2525] flex flex-col justify-center items-center gap-y-2 ">
         <img className="w-[250px] p-2" src={nameLogo} alt="#" />
         <div className=" w-[30%] flex justify-start items-center xs:w-[80%]">
           <p className="text-gri mx-2 font-roboto text-xs">Anasayfa</p>

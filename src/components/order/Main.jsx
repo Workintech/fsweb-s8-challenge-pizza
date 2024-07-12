@@ -12,7 +12,7 @@ function Main() {
             <span>(200)</span>
           </div>
         </div>
-        <div className="w-full text-softGri text-justify text-xs">
+        <div className="w-full text-softGri text-justify text-xs ">
           <p className="leading-loose">
             {" "}
             Frontend Dev olarak hala position:absolute kullanıyorsan bu çok acı
