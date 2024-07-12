@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Dropdown,
   DropdownToggle,
@@ -6,13 +6,18 @@ import {
   DropdownItem,
 } from "reactstrap";
 
-function DropDown() {
+function DropDown({ selectBread }) {
   const [dropDownOpen, setDropDownOpen] = useState(false);
   const [header, setHeader] = useState("-Hamur Kalınlığı Seç-");
+  const [thin, setThin] = useState(null);
 
   const toggle = () => {
     setDropDownOpen(!dropDownOpen);
   };
+
+  useEffect(() => {
+    selectBread(thin);
+  }, [thin]);
 
   return (
     <div>
@@ -27,13 +32,19 @@ function DropDown() {
           <DropdownItem header> Hamur kalınlığı </DropdownItem>
           <DropdownItem
             className="text-sm hover:bg-softGri hover:text-white"
-            onClick={() => setHeader("İnce")}
+            onClick={() => {
+              setHeader("İnce");
+              setThin("İnce");
+            }}
           >
             İnce
           </DropdownItem>
           <DropdownItem
             className="text-sm hover:bg-softGri hover:text-white"
-            onClick={() => setHeader("Kalın")}
+            onClick={() => {
+              setHeader("Kalın");
+              setThin("İnce");
+            }}
           >
             Kalın
           </DropdownItem>

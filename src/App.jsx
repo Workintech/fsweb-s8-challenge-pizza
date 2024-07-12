@@ -5,10 +5,15 @@ import SuccessPage from "./layouts/SuccessPage";
 import { useState } from "react";
 
 function App() {
-  const [size, setSize] = useState("M");
+  const [size, setSize] = useState("S");
+  const [bread, setBread] = useState(null);
 
   const selectSize = (value) => {
     setSize(value);
+  };
+
+  const selectBread = (value) => {
+    setBread(value);
   };
 
   return (
@@ -17,10 +22,10 @@ function App() {
         <HomePage />
       </Route>
       <Route path="/order" exact>
-        <OrderPage selectSize={() => selectSize(value)} />
+        <OrderPage selectBread={selectBread} selectSize={selectSize} />
       </Route>
       <Route path="/success" exact>
-        <SuccessPage size={size} />
+        <SuccessPage bread={bread} size={size} />
       </Route>
     </Switch>
   );

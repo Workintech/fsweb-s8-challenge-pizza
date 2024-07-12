@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import DropDown from "./DropDown";
 import AddMaterial from "./AddMaterial";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const initialState = {
   active1: false,
@@ -8,8 +9,10 @@ const initialState = {
   active3: false,
 };
 
-function Form({ selectSize }) {
+function Form({ selectSize, selectBread }) {
   const [active, setActive] = useState(initialState);
+
+  const history = useHistory("/success");
 
   const clickHandler = (e) => {
     if (e.target.id === "active1") {
@@ -29,7 +32,7 @@ function Form({ selectSize }) {
   }, []);
 
   return (
-    <div className="w-screen flex flex-col justify-center items-center p-2 font-roboto mt-4">
+    <form className="w-screen flex flex-col justify-center items-center p-2 font-roboto mt-4">
       <section className="w-[30%] flex flex-col justify-center items-center gap-y-4">
         <div className="w-full flex justify-between">
           <span className="font-bold text-sm">
@@ -42,6 +45,7 @@ function Form({ selectSize }) {
         <div className="w-full flex justify-between items-center">
           <div className="w-[40%] flex justify-between items-center">
             <button
+              type="button"
               id="active1"
               onClick={clickHandler}
               className={`rounded-full w-12 h-12 p-2 text-xs text-softGri font-semibold  ${
@@ -52,6 +56,7 @@ function Form({ selectSize }) {
               S
             </button>
             <button
+              type="button"
               id="active2"
               onClick={clickHandler}
               className={` rounded-full w-12 h-12 p-2 text-xs text-softGri font-semibold ${
@@ -62,6 +67,7 @@ function Form({ selectSize }) {
               M
             </button>
             <button
+              type="button"
               id="active3"
               onClick={clickHandler}
               className={` rounded-full w-12 h-12 p-2 text-xs text-softGri font-semibold ${
@@ -71,14 +77,15 @@ function Form({ selectSize }) {
               L
             </button>
           </div>
-          <DropDown />
+          <DropDown selectBread={selectBread} />
         </div>
+        <button onClick={() => history.push("/success")}>next</button>
       </section>
 
       <section className="w-[31%] flex flex-col justify-start items-center gap-y-4 mt-4">
         <AddMaterial />
       </section>
-    </div>
+    </form>
   );
 }
 

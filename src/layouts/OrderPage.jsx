@@ -1,9 +1,9 @@
 import Order from "../components/order/Order";
 
-function OrderPage({ selectSize }) {
+function OrderPage({ selectSize, selectBread }) {
   return (
     <div>
-      <Order selectSize={selectSize} />
+      <Order selectBread={selectBread} selectSize={selectSize} />
     </div>
   );
 }

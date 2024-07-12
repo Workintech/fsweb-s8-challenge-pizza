@@ -69,6 +69,7 @@ function Main() {
             {menuItems.map((item, index) =>
               index == 1 ? (
                 <a
+                  key={index}
                   href=""
                   className="w-[95px] rounded-full px-3 py-2 bg-gri text-white flex justify-center items-center gap-x-2 xs:justify-start xs:py-4 xs:w-[100px]"
                 >
