@@ -1,5 +1,5 @@
 import React from "react";
-import { FaSquareTwitter } from "react-icons/fa6";
+// import { FaSquareTwitter } from "react-icons/fa6";
 
 import location from "../../../public/assets/footer/icons/icon-1.png";
 import posta from "../../../public/assets/footer/icons/icon-2.png";
@@ -69,9 +69,7 @@ function Footer() {
         <span>
           <p className="text-xs">© 2023 Teknolojik Yemekler</p>
         </span>
-        <span>
-          <FaSquareTwitter />
-        </span>
+        <span>{/* <FaSquareTwitter /> */}</span>
       </div>
     </footer>
   );
