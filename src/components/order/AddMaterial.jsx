@@ -8,7 +8,7 @@ const initialState = {
   notes: "",
 };
 
-function AddMaterial({ size, bread, finalOrder }) {
+function AddMaterial({ validate, price, size, bread, finalOrder }) {
   const [materials, setMaterials] = useState([]);
   const [addPrice, setAddPrice] = useState(0);
   const [nameAndNotes, setNameAndNotes] = useState(initialState);
@@ -73,8 +73,15 @@ function AddMaterial({ size, bread, finalOrder }) {
       notes: nameAndNotes.notes,
       material: materials,
     });
-    console.log(nameAndNotes);
   }, [nameAndNotes, materials]);
+
+  useEffect(() => {
+    price({ addPrice: addPrice, multiply: multiply });
+  }, [addPrice, multiply]);
+
+  useEffect(() => {
+    validate(formValid);
+  }, [formValid]);
 
   return (
     <form className="w-full">

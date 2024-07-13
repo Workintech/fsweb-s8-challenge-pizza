@@ -34,10 +34,10 @@ export default {
       'bej':'#FAF7F2',
       'white':'white',
       'red':'red',
-      'bej':"#FAF7F2",
       'gri':"#292929",
       'softGri':"#5F5F5F",
-      'black':"black"
+      'black':"black",
+      'success' :"#973131"
     },
     screens:{
       'xs':{'max':'540px'}

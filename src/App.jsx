@@ -1,13 +1,19 @@
-import { Switch, Route } from "react-router-dom/cjs/react-router-dom.min";
+import {
+  Switch,
+  Route,
+  useHistory,
+} from "react-router-dom/cjs/react-router-dom.min";
 import HomePage from "./layouts/HomePage";
 import OrderPage from "./layouts/OrderPage";
 import SuccessPage from "./layouts/SuccessPage";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [size, setSize] = useState("S");
   const [bread, setBread] = useState(null);
   const [order, setOrder] = useState(null);
+  const [totalPrice, setTotalPrice] = useState(null);
+  const [validation, setvalidation] = useState(null);
 
   const selectSize = (value) => {
     setSize(value);
@@ -21,6 +27,14 @@ function App() {
     setOrder(value);
   };
 
+  const price = (value) => {
+    setTotalPrice(value);
+  };
+
+  const validate = (value) => {
+    setvalidation(value);
+  };
+
   return (
     <Switch>
       <Route path="/" exact>
@@ -28,15 +42,19 @@ function App() {
       </Route>
       <Route path="/order" exact>
         <OrderPage
+          validation={validation}
+          validate={validate}
+          price={price}
           finalOrder={finalOrder}
           selectBread={selectBread}
           selectSize={selectSize}
           size={size}
           bread={bread}
+          order={order}
         />
       </Route>
       <Route path="/success" exact>
-        <SuccessPage order={order} bread={bread} size={size} />
+        <SuccessPage totalPrice={totalPrice} order={order} />
       </Route>
     </Switch>
   );

@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import DropDown from "./DropDown";
 import AddMaterial from "./AddMaterial";
@@ -9,12 +10,21 @@ const initialState = {
   active3: false,
 };
 
-function Form({ size, selectSize, selectBread, finalOrder }) {
+function Form({
+  validation,
+  validate,
+  order,
+  price,
+  size,
+  selectSize,
+  selectBread,
+  finalOrder,
+}) {
   const [active, setActive] = useState(initialState);
   const [bread, setBread] = useState(null);
   const [validBread, setValidBread] = useState(null);
 
-  const history = useHistory("/success");
+  const history = useHistory();
 
   const clickHandler = (e) => {
     if (e.target.id === "active1") {
@@ -31,6 +41,15 @@ function Form({ size, selectSize, selectBread, finalOrder }) {
 
   const submitHandler = (e) => {
     e.preventDefault();
+    if (validation) {
+      axios
+        .post("https://reqres.in/api/pizza ", order)
+        .then((res) => {
+          console.log(res.data);
+          history.push("/success");
+        })
+        .catch((err) => console.warn(err));
+    }
   };
 
   const selectThinBread = (value) => {
@@ -109,7 +128,22 @@ function Form({ size, selectSize, selectBread, finalOrder }) {
       </section>
 
       <section className="w-[31%] flex flex-col justify-start items-center gap-y-4 mt-4 xs:w-[85%]">
-        <AddMaterial size={size} bread={bread} finalOrder={finalOrder} />
+        <AddMaterial
+          validate={validate}
+          price={price}
+          size={size}
+          bread={bread}
+          finalOrder={finalOrder}
+        />
+        <button
+          disabled={!validation}
+          type="submit"
+          className={`w-full ${
+            validation ? "bg-yellow" : "bg-gray-300"
+          } py-3 rounded-md text-lg font-medium`}
+        >
+          SİPARİŞ VER
+        </button>
       </section>
     </form>
   );

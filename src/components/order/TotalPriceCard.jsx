@@ -1,6 +1,6 @@
 function TotalPriceCard({ addPrice, multiply }) {
   return (
-    <div className="w-full p-4 flex flex-col items-center gap-y-2 ">
+    <div className="bg-bej w-full p-4 flex flex-col items-center gap-y-2 ">
       <h1 className="w-full text-lg flex justify-start font-semibold xs:text-xl">
         <span>Sipariş Toplamı</span>
       </h1>
