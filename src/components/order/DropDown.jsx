@@ -44,7 +44,7 @@ function DropDown({ selectBread, selectThinBread }) {
             className="text-sm hover:bg-softGri hover:text-white"
             onClick={() => {
               setHeader("Kalın");
-              setThin("İnce");
+              setThin("Kalın");
             }}
           >
             Kalın
