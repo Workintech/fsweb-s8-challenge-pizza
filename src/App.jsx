@@ -7,6 +7,7 @@ import { useState } from "react";
 function App() {
   const [size, setSize] = useState("S");
   const [bread, setBread] = useState(null);
+  const [order, setOrder] = useState(null);
 
   const selectSize = (value) => {
     setSize(value);
@@ -16,16 +17,26 @@ function App() {
     setBread(value);
   };
 
+  const finalOrder = (value) => {
+    setOrder(value);
+  };
+
   return (
     <Switch>
       <Route path="/" exact>
         <HomePage />
       </Route>
       <Route path="/order" exact>
-        <OrderPage selectBread={selectBread} selectSize={selectSize} />
+        <OrderPage
+          finalOrder={finalOrder}
+          selectBread={selectBread}
+          selectSize={selectSize}
+          size={size}
+          bread={bread}
+        />
       </Route>
       <Route path="/success" exact>
-        <SuccessPage bread={bread} size={size} />
+        <SuccessPage order={order} bread={bread} size={size} />
       </Route>
     </Switch>
   );

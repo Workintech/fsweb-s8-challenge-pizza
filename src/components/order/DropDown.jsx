@@ -6,7 +6,7 @@ import {
   DropdownItem,
 } from "reactstrap";
 
-function DropDown({ selectBread }) {
+function DropDown({ selectBread, selectThinBread }) {
   const [dropDownOpen, setDropDownOpen] = useState(false);
   const [header, setHeader] = useState("-Hamur Kalınlığı Seç-");
   const [thin, setThin] = useState(null);
@@ -17,13 +17,14 @@ function DropDown({ selectBread }) {
 
   useEffect(() => {
     selectBread(thin);
+    selectThinBread(thin);
   }, [thin]);
 
   return (
     <div>
       <Dropdown isOpen={dropDownOpen} toggle={toggle}>
         <DropdownToggle
-          className="text-sm px-4 py-2 bg-bej text-gri hover:bg-softGri"
+          className="text-sm px-4 py-2 bg-bej text-gri hover:bg-softGri xs:px-0 xs:py-0"
           caret
         >
           {header}

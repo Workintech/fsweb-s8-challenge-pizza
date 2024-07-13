@@ -1,7 +1,9 @@
-function SuccessPage({ size, bread }) {
+import Success from "../components/success/Success";
+
+function SuccessPage({ size, bread, order }) {
   return (
     <div>
-      {size} + {bread}
+      <Success size={size} bread={bread} order={order} />
     </div>
   );
 }

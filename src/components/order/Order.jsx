@@ -2,12 +2,20 @@ import React from "react";
 import Header from "./Header";
 import Main from "./Main";
 import Form from "./Form";
-function Order({ selectSize, selectBread }) {
+import Footer from "../home/Footer";
+function Order({ size, bread, selectSize, selectBread, finalOrder }) {
   return (
-    <div>
+    <div className="w-screen">
       <Header />
       <Main />
-      <Form selectBread={selectBread} selectSize={selectSize} />
+      <Form
+        size={size}
+        bread={bread}
+        finalOrder={finalOrder}
+        selectBread={selectBread}
+        selectSize={selectSize}
+      />
+      <Footer />
     </div>
   );
 }

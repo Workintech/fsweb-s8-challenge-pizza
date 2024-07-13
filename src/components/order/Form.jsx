@@ -9,8 +9,10 @@ const initialState = {
   active3: false,
 };
 
-function Form({ selectSize, selectBread }) {
+function Form({ size, selectSize, selectBread, finalOrder }) {
   const [active, setActive] = useState(initialState);
+  const [bread, setBread] = useState(null);
+  const [validBread, setValidBread] = useState(null);
 
   const history = useHistory("/success");
 
@@ -27,23 +29,40 @@ function Form({ selectSize, selectBread }) {
     }
   };
 
+  const submitHandler = (e) => {
+    e.preventDefault();
+  };
+
+  const selectThinBread = (value) => {
+    setBread(value);
+  };
+
   useEffect(() => {
     setActive({ ...initialState, active1: true });
   }, []);
 
+  useEffect(() => {
+    bread === "İnce" || bread === "Kalın"
+      ? setValidBread(true)
+      : setValidBread(false);
+  }, [bread]);
+
   return (
-    <form className="w-screen flex flex-col justify-center items-center p-2 font-roboto mt-4">
-      <section className="w-[30%] flex flex-col justify-center items-center gap-y-4">
-        <div className="w-full flex justify-between">
-          <span className="font-bold text-sm">
+    <form
+      onSubmit={submitHandler}
+      className="w-screen flex flex-col justify-center items-center p-2 font-roboto mt-4 mb-4 "
+    >
+      <section className="w-[30%] flex flex-col justify-center items-center gap-y-4 xs:w-[80%] ">
+        <div className="w-full flex justify-between ">
+          <span className="font-bold text-sm xs:text-lg">
             Boyut Seç<span className="text-red">*</span>
           </span>
-          <span className="font-bold text-sm">
+          <span className="font-bold text-sm xs:text-lg">
             Hamur Seç<span className="text-red">*</span>
           </span>
         </div>
-        <div className="w-full flex justify-between items-center">
-          <div className="w-[40%] flex justify-between items-center">
+        <div className="w-full flex justify-between items-center xs:items-start xs:justify-around">
+          <div className="w-[40%] flex justify-between items-center xs:flex-col gap-y-2 xs:items-start">
             <button
               type="button"
               id="active1"
@@ -77,13 +96,20 @@ function Form({ selectSize, selectBread }) {
               L
             </button>
           </div>
-          <DropDown selectBread={selectBread} />
+          <DropDown
+            selectThinBread={selectThinBread}
+            selectBread={selectBread}
+          />
         </div>
-        <button onClick={() => history.push("/success")}>next</button>
+        {!validBread && (
+          <div className="w-full text-right text-red">
+            Lütfen hamur kalınlığını seçiniz.
+          </div>
+        )}
       </section>
 
-      <section className="w-[31%] flex flex-col justify-start items-center gap-y-4 mt-4">
-        <AddMaterial />
+      <section className="w-[31%] flex flex-col justify-start items-center gap-y-4 mt-4 xs:w-[85%]">
+        <AddMaterial size={size} bread={bread} finalOrder={finalOrder} />
       </section>
     </form>
   );
