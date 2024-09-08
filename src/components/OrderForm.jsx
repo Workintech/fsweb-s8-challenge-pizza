@@ -250,11 +250,15 @@ export default function OrderForm() {
       </NoteContainer>
 
       {/* Quantity Counter Implementation */}
-      <CounterContainer>
-        <Button onClick={decreaseQuantity}>-</Button>
-        <AmountDisplay>{quantity}</AmountDisplay>
-        <Button onClick={increaseQuantity}>+</Button>
-      </CounterContainer>
+      <div>
+        <CounterContainer>
+          <Button onClick={decreaseQuantity}>-</Button>
+          <AmountDisplay>{quantity}</AmountDisplay>
+          <Button onClick={increaseQuantity}>+</Button>
+        </CounterContainer>
+        <div>Card Container here</div>
+      </div>
+
     </>
   );
 }
