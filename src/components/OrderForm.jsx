@@ -5,6 +5,10 @@ import PizzaDescription from './PizzaDescription';
 import SizeSelector from './SizeSelector';
 import HamurDropdown from './HamurDropdown';
 import styled from 'styled-components';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { Link } from 'react-router-dom';
+
 
 const SizeAndCrustContainer = styled.div`
   display: flex;
@@ -119,6 +123,59 @@ const AmountDisplay = styled.div`
   margin: 0 -1px;  /* Remove gap between buttons and display */
 `;
 
+const CardContainer = styled.div`
+  width: 300px;
+  padding: 20px;
+  margin: 20px auto;
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative; /* Enables positioning of button inside */
+  padding-bottom: 60px; /* Space for the button */
+`;
+
+const CardTitle = styled.h3`
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+`;
+
+const TotalAmountText = styled.p`
+  color: red;
+  font-weight: bold;
+  margin-bottom: 5px;
+`;
+
+const OrderButton = styled.button`
+  width: 100%;
+  padding: 10px 0;
+  background-color: #FDC913;
+  color: black; /* Black text for the button */
+  font-weight: bold;
+  border: none;
+  border-radius: 0 0 5px 5px; /* Rounded bottom corners */
+  cursor: pointer;
+  font-size: 1.2rem;
+  position: absolute; /* Absolute positioning */
+  bottom: 0; /* Positioned at the bottom */
+  left: 0; /* Ensure it spans the full width */
+  
+  &:hover {
+    background-color: #e6b000;
+  }
+`;
+
+const HorizontalContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 160px; /* Increased gap between counter and card */
+  margin-top: 20px;
+  padding-left: 120px; /* Slightly moved it to the right */
+  width: 95%;
+`;
+
+
 const toppings = [
   'Peperoni', 'Domates', 'Biber', 'Sosis', 'Mısır',
   'Sucuk', 'Kanada Jambonu', 'Acı Sucuk', 'Ananas',
@@ -128,7 +185,14 @@ const toppings = [
 export default function OrderForm() {
   const [note, setNote] = useState('');
   const [selectedToppings, setSelectedToppings] = useState([]);
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState(1); // Default quantity is 1
+
+  
+  const notify2 = () => {
+    toast.success("Siparişini aldık!", {
+      position: "top-right"
+    });
+  };
 
   const handleNoteChange = (event) => {
     setNote(event.target.value);
@@ -151,6 +215,12 @@ export default function OrderForm() {
 
   const toppingPrice = selectedToppings.length * 5;
 
+  // Base price of a pizza (85.50₺)
+  const pizzaBasePrice = 85.50;
+
+  // Calculate total price based on quantity and topping price
+  const totalPrice = (pizzaBasePrice + toppingPrice) * quantity;
+
   const increaseQuantity = () => setQuantity(prev => prev + 1);
   const decreaseQuantity = () => {
     if (quantity > 1) setQuantity(prev => prev - 1);
@@ -171,6 +241,7 @@ export default function OrderForm() {
           <HamurDropdown />
         </HamurDropdownWrapper>
       </SizeAndCrustContainer>
+      
       <div>
         <ToppingSection>
           <ToppingTitle>Ek Malzemeler</ToppingTitle>
@@ -250,15 +321,26 @@ export default function OrderForm() {
       </NoteContainer>
 
       {/* Quantity Counter Implementation */}
-      <div>
-        <CounterContainer>
-          <Button onClick={decreaseQuantity}>-</Button>
-          <AmountDisplay>{quantity}</AmountDisplay>
-          <Button onClick={increaseQuantity}>+</Button>
-        </CounterContainer>
-        <div>Card Container here</div>
-      </div>
-
+      <HorizontalContainer>
+        <div>
+          <CounterContainer>
+            <Button onClick={decreaseQuantity}>-</Button>
+            <AmountDisplay>{quantity}</AmountDisplay>
+            <Button onClick={increaseQuantity}>+</Button>
+          </CounterContainer>
+        </div>
+        <div>
+          <CardContainer>
+            <CardTitle>Sipariş Toplamı</CardTitle>
+            <p>Seçimler: {toppingPrice}₺</p>
+            <TotalAmountText>Toplam: {totalPrice.toFixed(2)}₺</TotalAmountText>
+            <Link to="/ordercomplete">
+            <OrderButton onClick={notify2}>SİPARİŞ VER</OrderButton>
+            </Link>
+          </CardContainer>
+        </div>
+      </HorizontalContainer>
     </>
   );
 }
+
